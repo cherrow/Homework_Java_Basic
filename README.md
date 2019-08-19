@@ -20,6 +20,8 @@
 
 ## 5. When do you use a Marker Interface?
 
+* 使用标记接口时，我们的意图是为实现类做上一个标记，以便在要使用标记接口的某些特性时，可以判断这些实现类是否属于我们的标记接口，再进行下一步操作，因此当我们需要对某个特性进行抽象时，可以使用标记接口
+
 ## 6. Why are ENUMS important for Readable Code?
 
 * 枚举类本身就是可读性非常高的，从枚举的命名就可以看出常量的含义
@@ -33,10 +35,34 @@
 
 ## 8. What is functional programming?
 
+* 函数式编程不同于传统的指令式编程，它将繁琐复杂的指令集统一封装在函数中，外部调用时不必关注函数内部的状态变化，同时这种编程范式也更符合人类解决问题的思维。这种编程范式在 Java 8 中尤其突出，如典型的 Stream api
+
+* 下面的示例代码就很好的说明了函数式编程的特点，首先对集合中的元素进行去重，再筛选出大于 5 的元素，最后统计一共有多少个，这种方式与我们正常处理问题的逻辑思路是一致的:  
+  
+    ````java
+    List<Integer> list = new ArrayList<>(Arrays.asList(1, 6, 6, 3, 8, 10, 10));
+    integerList.stream().distinct().filter(item -> item > 5).count();
+    ````
+
+
 ## 9. Why should you prefer Builder Pattern to build complex objects?
 
 * 可读性更高，阅读代码时可以很容易看出构造对象时设置了哪些属性
 * 更节省代码，当构造一个复杂的对象时，不使用 builder 则需要写很多行代码
+* 下面的代码展示了使用 builder 模式和不使用之间的区别：  
+  
+    ````java
+    // use builder pattern
+    Message.builder().subject("Hello!").content("Hello, dear Cherrow").build();
+    ````
+
+    ````java
+    // dont use builder pattern
+    Message message = new Message();
+    message.setSubject("Hello!");
+    message.setContent("Hello, dear Cherrow");
+    ````
+
 
 ## 10. Why should you avoid floats for Calculations?
 
