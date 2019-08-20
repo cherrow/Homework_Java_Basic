@@ -1,6 +1,5 @@
 # Java Basic Learning
 
-
 ## 1. Why should you have minimum scope for variables?
 
 * 代码可读性更高，不会造成变量太多、别人看不懂那些变量都是干什么用的情况出现。对于类中的局部变量而言，最好是在使用的时候再去声明，比如一个方法里会用到一个变量，那就应该在这个方法内部去定义一个变量
@@ -44,7 +43,6 @@
     integerList.stream().distinct().filter(item -> item > 5).count();
     ````
 
-
 ## 9. Why should you prefer Builder Pattern to build complex objects?
 
 * 可读性更高，阅读代码时可以很容易看出构造对象时设置了哪些属性
@@ -63,9 +61,10 @@
     message.setContent("Hello, dear Cherrow");
     ````
 
-
 ## 10. Why should you avoid floats for Calculations?
 
 * 浮点型（即 float）数值进行计算时会造成精度的损失
 
 ## 11. Why should you build the riskiest high priority features first?
+
+* 在项目初期阶段对风险性较高的功能先 spike 一下，可以有效降低项目的风险，如果在项目进行到后期才发现功能开发难度太大导致项目阻塞，则会成为较大的问题
